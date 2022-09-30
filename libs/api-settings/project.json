@@ -1,0 +1,27 @@
+{
+  "name": "api-settings",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/api-settings/src",
+  "prefix": "ega",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/api-settings"],
+      "options": {
+        "jestConfig": "libs/api-settings/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/api-settings/**/*.ts",
+          "libs/api-settings/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

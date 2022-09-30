@@ -1,0 +1,7 @@
+<p>dashboard works!</p>
+
+<ng-container *ngIf="menuService.sidebarMenu$ | async as menu">
+  <pre>{{ menu | json }}</pre>
+</ng-container>
+
+{{ environment | json }}

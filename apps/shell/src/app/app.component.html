@@ -1,1 +1,23 @@
-<ega-nx-welcome></ega-nx-welcome>
+<!-- <ul>
+  <li><a routerLink="/">Home</a></li>
+
+  <li *ngFor="let remote of remotes">
+    <a [routerLink]="remote?.routePath">{{ remote?.displayName }}</a>
+  </li>
+  <li><a routerLink="pharmacy">pharmacy</a></li>
+</ul> -->
+
+<!-- <h1>Logged in User: {{ user$ | async }}</h1>
+<form [formGroup]="form">
+  <input type="text" formControlName="username" />
+  <button (click)="login()">Login</button>
+</form> -->
+
+<!-- <hr /> -->
+
+<ng-container *ngFor="let p of components; let last = last">
+  <plugin-proxy [options]="p"></plugin-proxy>
+  <!-- <i *ngIf="!last" class="arrow right" ></i> -->
+</ng-container>
+
+<router-outlet></router-outlet>

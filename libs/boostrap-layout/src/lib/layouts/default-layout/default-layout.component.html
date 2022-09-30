@@ -1,0 +1,21 @@
+<ega-header></ega-header>
+<div class="container-fluid">
+  <div class="row">
+    <ng-container *ngIf="menuService.sidebarMenu$ | async as menu">
+    <div class="col-2" *ngIf="$any(menu?.length) > 0">
+      <!-- menus -->
+
+        <ul class="list-group" >
+          <li class="list-group-item" *ngFor="let menuItem of menu">
+            <a [routerLink]="[menuItem?.url]">{{ menuItem?.label }}</a>
+          </li>
+        </ul>
+      </div>
+    </ng-container>
+    <div class="col-10">
+      <!-- page content -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<ega-footer></ega-footer>

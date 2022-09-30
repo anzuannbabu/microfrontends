@@ -8,13 +8,17 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es2020",
     "module": "esnext",
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ega/api-settings": ["libs/api-settings/src/index.ts"],
+      "@ega/auth": ["libs/auth/src/index.ts"],
+      "@ega/boostrap-layout": ["libs/boostrap-layout/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

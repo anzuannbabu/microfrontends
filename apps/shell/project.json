@@ -6,7 +6,7 @@
   "prefix": "ega",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nrwl/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/shell",
@@ -16,8 +16,15 @@
         "tsConfig": "apps/shell/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/shell/src/favicon.ico", "apps/shell/src/assets"],
-        "styles": ["apps/shell/src/styles.scss"],
-        "scripts": []
+        "styles": [
+          "apps/shell/src/styles.scss",
+          "./node_modules/bootstrap/scss/bootstrap.scss"
+        ],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/shell/webpack.config.js"
+        },
+        "commonChunk": false
       },
       "configurations": {
         "production": {
@@ -39,7 +46,10 @@
               "with": "apps/shell/src/environments/environment.prod.ts"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/shell/webpack.prod.config.js"
+          }
         },
         "development": {
           "buildOptimizer": false,
@@ -53,7 +63,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nrwl/angular:webpack-server",
       "configurations": {
         "production": {
           "browserTarget": "shell:build:production"
@@ -62,12 +72,17 @@
           "browserTarget": "shell:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4400,
+        "publicHost": "http://localhost:4400"
+      }
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "ngx-build-plus:extract-i18n",
       "options": {
-        "browserTarget": "shell:build"
+        "browserTarget": "shell:build",
+        "extraWebpackConfig": "apps/shell/webpack.config.js"
       }
     },
     "lint": {

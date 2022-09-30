@@ -1,0 +1,18 @@
+[
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4401/remoteEntry.js",
+    "remoteName": "registrationMfe",
+    "exposedModule": "./Download",
+    "displayName": "Download",
+    "componentName": "DownloadComponent"
+  },
+  {
+    "type": "module",
+    "remoteEntry": "http://localhost:4401/remoteEntry.js",
+    "remoteName": "registrationMfe",
+    "exposedModule": "./Upload",
+    "displayName": "Upload",
+    "componentName": "UploadComponent"
+  }
+]

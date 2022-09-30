@@ -1,0 +1,27 @@
+{
+  "name": "boostrap-layout",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/boostrap-layout/src",
+  "prefix": "ega",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/boostrap-layout"],
+      "options": {
+        "jestConfig": "libs/boostrap-layout/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/boostrap-layout/**/*.ts",
+          "libs/boostrap-layout/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

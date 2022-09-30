@@ -1,0 +1,17 @@
+{
+  "registrationMfe": {
+    "remoteEntry": "http://localhost:4401/remoteEntry.js",
+    "exposedModule": "./registration.module",
+    "displayName": "Registration",
+    "routePath": "registration",
+    "ngModuleName": "RegistrationModule"
+  },
+  "pharmacyMfe": {
+    "remoteEntry": "http://localhost:4402/remoteEntry.js",
+    "exposedModule": "./pharmacy.module",
+    "displayName": "Pharmacy",
+    "routePath": "pharmacy",
+    "ngModuleName": "PharmacyModule"
+  }
+
+}
